@@ -41,4 +41,4 @@ Examples of unacceptable behavior by participants include:
 
 ### License
 
-Bee is [MIT Lincesed]([http://www.google.fr/](https://github.com/cyberenginee/bee-language/blob/main/LICENSE)https://github.com/cyberenginee/bee-language/blob/main/LICENSE)
+Bee is [MIT licensed](https://github.com/cyberenginee/bee-language/blob/main/LICENSE)
