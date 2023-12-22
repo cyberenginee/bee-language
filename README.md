@@ -12,8 +12,8 @@ Bee is an interpreted high-level programming language that is written by Python.
 
 Bee is created for special and specific purposes.
 
-* **Cybersecurity**: Hackers are everywhere and protecting data is becoming even more crucial nowadays as technology is constantly updating. As a result, Bee has been built with the intention of securing data from unethical people so that the cyber world remains safe.
-* **Education**: Bee programming language has been architected in a very simple manner so that it becomes fun and easier to learn for any kind of person.
+* **Cybersecurity**: Hackers are everywhere and protecting data is becoming even more crucial nowadays as technology is constantly upgrading. As a result, Bee has been built with the intention of securing data from unethical people so that the cyber world remains safe.
+* **Learning**: Bee programming language has been architected in a very simple manner so that it becomes fun and easier to learn for any kind of person.
 
 ## Contributing
 
