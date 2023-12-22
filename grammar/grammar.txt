@@ -1,0 +1,53 @@
+statements : NEWLINE* expression (NEWLINE + expression)* NEWLINE*
+
+statement : KEYWORD : RETURN expression?
+          : KEYWORD : CONTINUE
+          : KEYWORD : BREAK
+          : expression
+
+expression : KEYWORD:VAR IDENTIFIER EQUAL expression
+           : comparison_expression ((KEYWORD:AND|KEYWORD:OR) comparison_expression)*
+
+comparison_expression : NOT comparison_expression
+                      : arithmatic_expression ((DOUBLE_EQUAL|LESS_THAN|GREATER_THAN|LESS_THAN_EQUAL|GREATER_THAN_EQUAL) arithmatic_expression)*
+
+arithmatic_expression : term ((PLUS|MINUS) term)*
+
+term : factor ((MUL|DIV) factor)*
+
+factor : (PLUS|MINUS) factor
+       : power
+
+power : call (POW factor)*
+
+call : atom (LAPREN (expression (COMMA expression)*)? RPAREN)?
+
+atom : INT|FLOAT|STRING|IDENTIFIER
+     : LPAREN expression RPAREN
+     : array_expression
+     : if_expression
+     : for_expression
+     : while_expression
+     : fun_def
+
+array_expression : LSQUARE (expression (COMMA expression)*)? RSQUARE
+
+if_expression : KEYWORD: IF expression KEYWORD: DO
+                (statement expression if_expression_elseIf | if_expression_else?)
+                (NEWLINE statements KEYWORD : END | if_expression_elseIf | if_expression_else)
+
+if_expression_elseIf : KEYWORD: ELSEIF expression KEYWORD: DO
+                (statement if_expression_elseIf | if_expression_else?)
+                (NEWLINE statements KEYWORD : END | if_expression_elseIf | if_expression_else)
+
+if_expression_else : KEYWORD : ELSE
+                     expression | (NEWLINE statements KEYWORD : END)
+
+for_expression : KEYWORD: FOR IDENTIFIER EQUAL expression KEYWORD: TO expression
+                 (KEYWORD: STEP expression)? KEYWORD: DO statement | (NEWLINE statements KEYWORD : END)
+
+while_expression : KEYWORD: WHILE expression KEYWORD: DO statement | (NEWLINE statements KEYWORD : END)
+
+fun_def : KEYWORD: FUN IDENTIFIER
+        : LAPREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN
+          (ARROW expression) | (NEWLINE statements KEYWORD : END)
