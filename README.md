@@ -17,7 +17,7 @@ Bee is created for special and specific purposes.
 
 ## Documentation
 
-You can find the Bee documentation at this link https://www.bee-lang.com/documentation.php . The documentation is divided into several sections.
+You can find the Bee documentation at this link https://www.bee-lang.com/documentation.php. The documentation is divided into several sections.
 
 * [Environment setup](https://www.bee-lang.com/documentation.php#environment_setup)
 * [Input and output](https://www.bee-lang.com/documentation.php#input_output)
@@ -35,7 +35,7 @@ You can find the Bee documentation at this link https://www.bee-lang.com/documen
 * [Function](https://www.bee-lang.com/documentation.php#function)
 * [Multi-line statement](https://www.bee-lang.com/documentation.php#multi_line_statement)
 * [Comment](https://www.bee-lang.com/documentation.php#comment)
-* [Error Handling](https://www.bee-lang.com/documentation.php#error_handling)
+* [Error handling](https://www.bee-lang.com/documentation.php#error_handling)
 
 ## Contributing
 
