@@ -15,6 +15,28 @@ Bee is created for special and specific purposes.
 * **Cybersecurity**: Hackers are everywhere and protecting data is becoming even more crucial nowadays as technology is constantly upgrading. As a result, Bee has been built with the intention of securing data from unethical people so that the cyber world remains safe.
 * **Learning**: Bee programming language has been architected in a very simple manner so that it becomes fun and easier to learn for any kind of person.
 
+## Documentation
+
+You can find the Bee documentation at this link https://www.bee-lang.com/documentation.php . The documentation is divided into several sections.
+
+* [Environment setup](https://www.bee-lang.com/documentation.php#environment_setup)
+* [Input and output](https://www.bee-lang.com/documentation.php#input_output)
+* [Statement](https://www.bee-lang.com/documentation.php#statement)
+* [Keyword](https://www.bee-lang.com/documentation.php#keyword)
+* [Variable](https://www.bee-lang.com/documentation.php#variable)
+* [Data type](https://www.bee-lang.com/documentation.php#data_type)
+* [String](https://www.bee-lang.com/documentation.php#string)
+* [Operator](https://www.bee-lang.com/documentation.php#operator)
+* [Conditional logic](https://www.bee-lang.com/documentation.php#conditional_logic)
+* [Iteration](https://www.bee-lang.com/documentation.php#iteration)
+* [Continue](https://www.bee-lang.com/documentation.php#continue)
+* [Break](https://www.bee-lang.com/documentation.php#break)
+* [List](https://www.bee-lang.com/documentation.php#list)
+* [Function](https://www.bee-lang.com/documentation.php#function)
+* [Multi-line statement](https://www.bee-lang.com/documentation.php#multi_line_statement)
+* [Comment](https://www.bee-lang.com/documentation.php#comment)
+* [Error Handling](https://www.bee-lang.com/documentation.php#error_handling)
+
 ## Contributing
 
 It is an open-source project so that smart developers can contribute to the further development of the language. Development of Bee happens in the open on GitHub, and we are grateful to the community for contributing bug fixes and improvements.
