@@ -37,6 +37,16 @@ You can find the Bee documentation at this link https://www.bee-lang.com/documen
 * [Comment](https://www.bee-lang.com/documentation.php#comment)
 * [Error handling](https://www.bee-lang.com/documentation.php#error_handling)
 
+## Limitation
+
+Some limitations in Bee programming need to be resolved.
+
+* Object-oriented programming
+* File I/O
+* Import file
+
+The work is in the process. We are expecting to get rid of these issues in the upcoming version. However, anyone is welcome to develop the language as this is an open-source project. Please, feel free to contribute.
+
 ## Contributing
 
 It is an open-source project so that smart developers can contribute to the further development of the language. Development of Bee happens in the open on GitHub, and we are grateful to the community for contributing bug fixes and improvements.
