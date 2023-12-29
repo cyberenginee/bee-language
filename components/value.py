@@ -27,6 +27,9 @@ class Value:
   def division_by(self, other):
     return None, self.illegal_operation(other)
 
+  def index_at(self, other):
+    return None, self.illegal_operation(other)
+
   def power_by(self, other):
     return None, self.illegal_operation(other)
 

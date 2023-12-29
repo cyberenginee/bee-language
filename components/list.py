@@ -35,7 +35,7 @@ class List(Value):
     else:
       return None, Value.illegal_operation(self, other)
 
-  def division_by(self, other):
+  def index_at(self, other):
     if isinstance(other, Number):
       try:
         return self.elements[other.value], None

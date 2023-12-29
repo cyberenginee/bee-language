@@ -26,6 +26,7 @@ TT_COMMA = 'COMMA'
 TT_ARROW = 'ARROW'
 TT_NEWLINE = 'NEWLINE'
 TT_EOF = 'EOF'
+TT_INDEX = 'INDEX'
 
 
 KEYWORD = [
@@ -39,7 +40,7 @@ KEYWORD = [
 	'do',
 	'for',
 	'to',
-	'leap',
+	'jump',
 	'while',
 	'fun',
 	'return',

@@ -347,6 +347,9 @@ class Interpreter:
     
     elif node.op_tok.type == TT_DIV:
       result, error = left.division_by(right)
+
+    elif node.op_tok.type == TT_INDEX:
+      result, error = left.index_at(right)
     
     elif node.op_tok.type == TT_POW:
       result, error = left.power_by(right)

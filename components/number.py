@@ -39,6 +39,19 @@ class Number(Value):
     else:
       return None, Value.illegal_operation(self, other)
 
+  def index_at(self, other):
+    if isinstance(other, Number):
+      if other.value == 0:
+        return None, RunTimeError(
+          other.pos_start, other.pos_end,
+          'Unable to index',
+          self.context
+        )
+
+      return Number(self.value / other.value).set_context(self.context), None
+    else:
+      return None, Value.illegal_operation(self, other)
+
   def power_by(self, other):
     if isinstance(other, Number):
       return Number(self.value ** other.value).set_context(self.context), None
