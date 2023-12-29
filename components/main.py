@@ -140,7 +140,7 @@ class BuiltInFunction(BaseFunction):
     list_ = exec_ctx.symbol_table.get("list")
     value = exec_ctx.symbol_table.get("value")
 
-    if not isinstance(List_, List):
+    if not isinstance(list_, List):
       return RunTimeResult().failure(RunTimeError(
         self.pos_start, self.pos_end,
         "First argument must be list.",
