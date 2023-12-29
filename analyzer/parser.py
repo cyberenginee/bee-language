@@ -396,14 +396,6 @@ class Parser:
       if res.error: return res
       else_case = (statements, True)
 
-      if self.current_tok.matches(TT_KEYWORD, 'end'):
-        res.register_advancement()
-        self.advance()
-      else:
-        return res.failure(InvalidSyntaxError(
-          self.current_tok.pos_start, self.current_tok.pos_end,
-          "Expected 'end'"
-        ))
     else:
       expr = res.register(self.statement())
       if res.error: return res
@@ -459,14 +451,11 @@ class Parser:
       if res.error: return res
       cases.append((condition, statements, True))
 
-      if self.current_tok.matches(TT_KEYWORD, 'end'):
-        res.register_advancement()
-        self.advance()
-      else:
-        all_cases = res.register(self.if_expr_elseif_or_else())
-        if res.error: return res
-        new_cases, else_case = all_cases
-        cases.extend(new_cases)
+      all_cases = res.register(self.if_expr_elseif_or_else())
+      if res.error: return res
+      new_cases, else_case = all_cases
+      cases.extend(new_cases)
+      
     else:
       expr = res.register(self.statement())
       if res.error: return res
