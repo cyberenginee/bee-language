@@ -202,7 +202,7 @@ class Parser:
     return self.bin_op(self.term, (TT_PLUS, TT_MINUS))
 
   def term(self):
-    return self.bin_op(self.factor, (TT_MUL, TT_DIV, TT_MOD))
+    return self.bin_op(self.factor, (TT_MUL, TT_DIV, TT_INDEX, TT_MOD))
 
   def factor(self):
     res = ParseResult()
@@ -345,7 +345,7 @@ class Parser:
       if res.error:
         return res.failure(InvalidSyntaxError(
           self.current_tok.pos_start, self.current_tok.pos_end,
-          "Expected ']', 'var', 'if', 'for', 'while', 'fun', 'int', 'float', identifier, '+', '-', '/', '(', '[' or 'not'"
+          "Expected ']', 'var', 'if', 'for', 'while', 'fun', 'int', 'float', identifier, '+', '-', '(', '[' or 'not'"
         ))
 
       while self.current_tok.type == TT_COMMA:
@@ -388,18 +388,26 @@ class Parser:
       res.register_advancement()
       self.advance()
 
-      if self.current_tok.type == TT_NEWLINE:
+    if self.current_tok.type == TT_NEWLINE:
+      res.register_advancement()
+      self.advance()
+
+      statements = res.register(self.statements())
+      if res.error: return res
+      else_case = (statements, True)
+
+      if self.current_tok.matches(TT_KEYWORD, 'end'):
         res.register_advancement()
         self.advance()
-
-        statements = res.register(self.statements())
-        if res.error: return res
-        else_case = (statements, True)
-
       else:
-        expr = res.register(self.statement())
-        if res.error: return res
-        else_case = (expr, False)
+        return res.failure(InvalidSyntaxError(
+          self.current_tok.pos_start, self.current_tok.pos_end,
+          "Expected 'end'"
+        ))
+    else:
+      expr = res.register(self.statement())
+      if res.error: return res
+      else_case = (expr, False)
 
     return res.success(else_case)
 
@@ -411,7 +419,6 @@ class Parser:
       all_cases = res.register(self.if_expr_elseif())
       if res.error: return res
       cases, else_case = all_cases
-      
     else:
       else_case = res.register(self.if_expr_else())
       if res.error: return res
@@ -452,11 +459,14 @@ class Parser:
       if res.error: return res
       cases.append((condition, statements, True))
 
-      all_cases = res.register(self.if_expr_elseif_or_else())
-      if res.error: return res
-      new_cases, else_case = all_cases
-      cases.extend(new_cases)
-
+      if self.current_tok.matches(TT_KEYWORD, 'end'):
+        res.register_advancement()
+        self.advance()
+      else:
+        all_cases = res.register(self.if_expr_elseif_or_else())
+        if res.error: return res
+        new_cases, else_case = all_cases
+        cases.extend(new_cases)
     else:
       expr = res.register(self.statement())
       if res.error: return res
@@ -515,7 +525,7 @@ class Parser:
     end_value = res.register(self.expr())
     if res.error: return res
 
-    if self.current_tok.matches(TT_KEYWORD, 'leap'):
+    if self.current_tok.matches(TT_KEYWORD, 'jump'):
       res.register_advancement()
       self.advance()
 
