@@ -514,7 +514,7 @@ class Parser:
     end_value = res.register(self.expr())
     if res.error: return res
 
-    if self.current_tok.matches(TT_KEYWORD, 'jump'):
+    if self.current_tok.matches(TT_KEYWORD, 'leap'):
       res.register_advancement()
       self.advance()
 
