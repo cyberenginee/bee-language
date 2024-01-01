@@ -40,7 +40,7 @@ KEYWORD = [
 	'do',
 	'for',
 	'to',
-	'jump',
+	'leap',
 	'while',
 	'fun',
 	'return',
