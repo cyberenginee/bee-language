@@ -43,7 +43,6 @@ Some limitations in Bee programming need to be resolved.
 
 * Object-oriented programming
 * File I/O
-* Import file
 
 The work is in the process. We are expecting to get rid of these issues in the upcoming version. However, anyone is welcome to develop the language as this is an open-source project. Please, feel free to contribute.
 
