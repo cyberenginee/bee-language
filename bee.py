@@ -1,6 +1,6 @@
 from components import main
 
-print('Bee [version: 1.0] released on [January 1, 2024]\nCreated by [Tahsin Ahmed] and copyright to [Cyberengine Inc.]\nFor more information, visit [www.bee-lang.com]\n')
+print('Bee [version: 1.0] released on [January 1, 2024]\nCreated by [Tahsin Ahmed] and copyright to [Cyberengine]\nFor more information, visit [www.bee-lang.com]\n')
 
 while True:
     text = input('Bee > ')
