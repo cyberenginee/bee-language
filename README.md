@@ -17,6 +17,7 @@ Bee is created for special and specific purposes.
 * **Learning**: Bee programming language has been architected in a very simple manner so that it becomes fun and easier to learn for any kind of person.
 
 ## How Does Bee Work?
+
 "Compiler" and "Interpreter" are two types of translators whose job is to convert a programming language into machine code that a computer can understand, simply put, 0 and 1. Not just the Bee language, every high-level programming language is basically converted into machine code by a compiler or interpreter. Here, Bee is basically an interpreted language.
 
 * Compiler: The code or program we write in the computer, the compiler reads the entire code together and then converts it into machine code. For example: C, C++, Java, and Erlang are compiled languages.
@@ -90,6 +91,10 @@ Examples of unacceptable behavior by participants include:
 * Publishing others’ private information, such as a physical or electronic address, without explicit permission
 * Other conduct that could reasonably be considered inappropriate in a professional setting
 
-### License
+## FAQ
+
+Now the question will arise in the mind of many people that languages like Python, C, and C++ are being used in computer security, then whether Bee language should be used or not. In fact, every programming language is primarily designed to solve a specific problem. But Python, C, C++ none of them are designed with security in mind. Memory management in C and C++ requires a lot of speed. This is because it has to be done manually and can lead to serious security issues like buffer overflows if not managed properly. But B language does automatic memory management, due to which a developer does not have to worry about memory management. Now, talking about Python, it is undoubtedly a very popular language. However, most Python projects rely on third-party libraries. If these libraries have security vulnerabilities, it creates an entry point for hackers. Besides, the heart of security is cryptography. Python also has a lot of nice libraries for cryptography. However, it is not easy to use and there is no guarantee that the people creating these libraries are safe. As a result, if these libraries cannot be used properly and key management cannot be done properly, the developer has to face a lot of trouble. So the B language aims to make something as important as cryptography simple and easy to use for a developer. However, the Bee language is very new and in its infancy. It needs proper development, i.e. there is still a lot of research to be done on it. But it is definitely not possible for me alone. That's why I've made it open-source so that anyone can make significant contributions to its continued development. Since the language is more security conscious, I believe that any code changes, library additions, or innovations should be included in the B language only after its security testing. In short, today the Bee language may be insignificant compared to other famous and popular languages. But one day maybe this language will go beyond as well as will play a major role in many important sectors of security.
+
+## License
 
 Bee is [MIT licensed](https://github.com/cyberenginee/bee-language/blob/main/LICENSE)
