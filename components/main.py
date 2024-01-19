@@ -250,20 +250,56 @@ class BuiltInFunction(BaseFunction):
     return RunTimeResult().success(Number.null)
   execute_run.arg_names = ["fn"]
 
+  def execute_import(self, exec_ctx):
+    fn = exec_ctx.symbol_table.get("fn")
+
+    if not isinstance(fn, String):
+      return RunTimeResult().failure(RunTimeError(
+        self.pos_start, self.pos_end,
+        "Second argument must be string.",
+        exec_ctx
+      ))
+
+    fn = fn.value
+
+    try:
+      with open(fn, "r") as f:
+        script = f.read()
+    except Exception as e:
+      return RunTimeResult().failure(RunTimeError(
+        self.pos_start, self.pos_end,
+        f"Failed to load script \"{fn}\"\n" + str(e),
+        exec_ctx
+      ))
+
+    _, error = run(fn, script)
+    
+    if error:
+      return RunTimeResult().failure(RunTimeError(
+        self.pos_start, self.pos_end,
+        f"Failed to finish executing script \"{fn}\"\n" +
+        error.as_string(),
+        exec_ctx
+      ))
+
+    return RunTimeResult().success(Number.null)
+  execute_import.arg_names = ["fn"]
+
 BuiltInFunction.print             = BuiltInFunction("show")
-BuiltInFunction.return_function   = BuiltInFunction("return_function")
+BuiltInFunction.return_function   = BuiltInFunction("return")
 BuiltInFunction.input             = BuiltInFunction("input")
 BuiltInFunction.int_input         = BuiltInFunction("int_input")
 BuiltInFunction.clear             = BuiltInFunction("clear")
 BuiltInFunction.is_number         = BuiltInFunction("is_number")
 BuiltInFunction.is_string         = BuiltInFunction("is_string")
-BuiltInFunction.is_list          = BuiltInFunction("is_list")
+BuiltInFunction.is_list           = BuiltInFunction("is_list")
 BuiltInFunction.is_function       = BuiltInFunction("is_function")
 BuiltInFunction.insert            = BuiltInFunction("insert")
 BuiltInFunction.pop               = BuiltInFunction("pop")
 BuiltInFunction.extend            = BuiltInFunction("extend")
 BuiltInFunction.len					      = BuiltInFunction("len")
 BuiltInFunction.run					      = BuiltInFunction("run")
+BuiltInFunction.fetch					    = BuiltInFunction("import")
 
 
 
@@ -570,13 +606,13 @@ global_symbol_table.set("pop", BuiltInFunction.pop)
 global_symbol_table.set("extend", BuiltInFunction.extend)
 global_symbol_table.set("len", BuiltInFunction.len)
 global_symbol_table.set("run", BuiltInFunction.run)
+global_symbol_table.set("import", BuiltInFunction.fetch)
 
 
 
 ##############
 # RUN PROGRAM
 ##############
-
 
 
 def run(fn, text):
