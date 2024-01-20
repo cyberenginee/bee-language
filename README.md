@@ -24,7 +24,7 @@ Bee is created for special and specific purposes.
 
 * Interpreter: The code or program we write on the computer, the interpreter reads each line and converts it into machine code without reading the entire code at once like a compiler. For example: Bee, Python, PHP, JavaScript, and Ruby are interpreted languages.
 
-Also, there are several advantages and disadvantages between compilers and interpreters. For example, a compiler takes less time to run a program than an Interpreter. However, the compiler uses more CPU and computer memory than the interpreter. Also, the error handling of the interpreter is relatively easier than that of the compiler.
+Also, there are several advantages and disadvantages between compilers and interpreters. Eg : Compiler takes less time to run a program than Interpreter. But the error handling of the interpreter is comparatively simpler than that of the compiler. Interpreter does not need to stress about memory management, it is done automatically. Because of this, the risk of memory error is much reduced in the interpreter as compared to the compiler.
 
 ## Who Needs Bee Language?
 Bee is a brand new language and the language is still being researched. It is not yet fully ready for industrial use. Bee language may be a source of annoyance to many as it is still underdeveloped, but may be enjoyable for certain categories of people –
