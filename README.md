@@ -55,7 +55,7 @@ You can find the Bee documentation at this link https://www.bee-lang.com/documen
 * [List](https://www.bee-lang.com/documentation.php#list)
 * [Function](https://www.bee-lang.com/documentation.php#function)
 * [Multi-line statement](https://www.bee-lang.com/documentation.php#multi_line_statement)
-* [Comment](https://www.bee-lang.com/documentation.php#import)
+* [Import](https://www.bee-lang.com/documentation.php#import)
 * [Comment](https://www.bee-lang.com/documentation.php#comment)
 * [Error handling](https://www.bee-lang.com/documentation.php#error_handling)
 
